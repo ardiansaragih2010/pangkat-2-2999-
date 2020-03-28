@@ -1,0 +1,26 @@
+package com.javaexcercise;
+
+import java.util.Scanner;
+
+public class Forum_W4 {
+//ardian_tambaraya_saragih_2201844894
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan nilai x : ");
+        int pangkat = input.nextInt();
+        int powerResult = (int) Math.pow(2, pangkat);
+        int sum = getTotalAllDigits(powerResult);
+        System.out.println("Hasil Pangkat = ".concat(Integer.toString(sum)));
+    }
+
+    public static int getTotalAllDigits(int value) {
+        String valueStr = Integer.toString(value);
+        int total = 0;
+
+        for (char digit : valueStr.toCharArray()) {
+            total = total + Integer.parseInt(String.valueOf(digit));
+        }
+        return total;
+    }
+}
